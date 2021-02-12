@@ -17,7 +17,7 @@ monitors:
   - id: pooltools # unique identifier
     name: pooltools.net
     description: 'PoolTools.net homepage' # default=empty
-    url: 'https://www.pooltools.net/index.php' # URL to fetch
+    url: 'https://www.pooltools.net/index.php?cf-worker-status-page=1' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
