@@ -28,3 +28,10 @@ monitors:
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
+  - id: mmmbrackets # unique identifier
+    name: mmmbrackets.com
+    description: 'MMMBrackets.com homepage' # default=empty
+    url: 'https://www.mmmbrackets.com/index.php?cf-worker-status-page=1' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
