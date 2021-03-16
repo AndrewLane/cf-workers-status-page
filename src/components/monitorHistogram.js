@@ -48,6 +48,7 @@ export default function MonitorHistogram({ monitorId, kvMonitor }) {
                     <MonitorDayAverage
                       location={key}
                       avg={kvMonitor.checks[dayInHistogram].res[key].a}
+                      samples={kvMonitor.checks[dayInHistogram].res[key].n}
                     />
                   )
                 })}
