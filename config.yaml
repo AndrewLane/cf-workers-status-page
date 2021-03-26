@@ -1,6 +1,6 @@
 settings:
   title: 'Status Page'
-  logo: logo-192x192.png # image in ./public/ folder
+  logo: connections-logo.png # image in ./public/ folder
   daysInHistogram: 14 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
