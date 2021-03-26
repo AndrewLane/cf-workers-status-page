@@ -7,7 +7,6 @@ import config from '../config.yaml'
 import MonitorCard from '../src/components/monitorCard'
 import MonitorFilter from '../src/components/monitorFilter'
 import MonitorStatusHeader from '../src/components/monitorStatusHeader'
-import ThemeSwitcher from '../src/components/themeSwitcher'
 
 const MonitorStore = new Store({
   monitors: config.monitors,
@@ -74,7 +73,6 @@ export default function Index({ config, kvMonitors, kvMonitorsLastUpdate }) {
             <h1 className="ml-4 text-3xl">{config.settings.title}</h1>
           </div>
           <div className="flex flex-row items-center">
-            {typeof window !== 'undefined' && <ThemeSwitcher />}
             <MonitorFilter active={slash} callback={filterByTerm} />
           </div>
         </div>
