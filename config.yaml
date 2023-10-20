@@ -21,10 +21,10 @@ monitors:
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
-  - id: espnbottomline # unique identifier
+  - id: espnapi # unique identifier
     name: 'espn.com scores'
-    description: 'ESPN.com bottomline scores feed' # default=empty
-    url: 'http://www.espn.com/mens-college-basketball/bottomline/scores' # URL to fetch
+    description: 'ESPN.com College Basketball Scores API' # default=empty
+    url: 'https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
