@@ -27,8 +27,8 @@ jobs:
         wranglerVersion: "2.21.3"
         command: publish --env production
         preCommands: >-
-          KV_NAMESPACE_ID=$(yarn wrangler kv:namespace list | node -e 'let data="";process.stdin.on("data",chunk=>data+=chunk).on("end",()=>{const namespace=JSON.parse(data).find(item=>item.title.endsWith("KV_STATUS_PAGE"));process.stdout.write(namespace ? namespace.id : "")})');
-          if [ -z "$KV_NAMESPACE_ID" ]; then yarn wrangler kv:namespace create KV_STATUS_PAGE; KV_NAMESPACE_ID=$(yarn wrangler kv:namespace list | node -e 'let data="";process.stdin.on("data",chunk=>data+=chunk).on("end",()=>{const namespace=JSON.parse(data).find(item=>item.title.endsWith("KV_STATUS_PAGE"));process.stdout.write(namespace ? namespace.id : "")})'); fi;
+          KV_NAMESPACE_ID=$(./node_modules/.bin/wrangler kv:namespace list | node -e 'let data="";process.stdin.on("data",chunk=>data+=chunk).on("end",()=>{const namespace=JSON.parse(data).find(item=>item.title.endsWith("KV_STATUS_PAGE"));process.stdout.write(namespace ? namespace.id : "")})');
+          if [ -z "$KV_NAMESPACE_ID" ]; then ./node_modules/.bin/wrangler kv:namespace create KV_STATUS_PAGE; KV_NAMESPACE_ID=$(./node_modules/.bin/wrangler kv:namespace list | node -e 'let data="";process.stdin.on("data",chunk=>data+=chunk).on("end",()=>{const namespace=JSON.parse(data).find(item=>item.title.endsWith("KV_STATUS_PAGE"));process.stdout.write(namespace ? namespace.id : "")})'); fi;
           test -n "$KV_NAMESPACE_ID" && printf '\n[env.production]\nkv_namespaces = [{binding="KV_STATUS_PAGE", id="%s"}]\n' "$KV_NAMESPACE_ID" >> wrangler.toml
         postCommands: |
           yarn kv-gc
